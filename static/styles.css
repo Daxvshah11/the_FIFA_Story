@@ -1,3 +1,9 @@
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     /* removing default margin */
     margin: 0;
@@ -13,6 +19,7 @@ body {
     width: 98%;
     position: relative;
     display: flex;
+    flex-direction: column;
 }
 
 #top_bar {
@@ -30,4 +37,50 @@ body {
     /* aligning vertically and horizontally */
     align-items: center;
     justify-content: center;
+}
+
+#choropleth_title {
+    display: flex;
+    font-size: 59px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+    /* font family to cursive */
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#choropleth {
+    /* for the choropleth */
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: auto;
+
+    /* aligning vertically and horizontally */
+    align-items: center;
+    justify-content: center;
+
+    /* border work */
+    border: 7px dashed rgb(172, 172, 255);
+    border-radius: 20px;
+}
+
+svg {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    border-width: 10px;
+}
+
+.tooltip {
+    color: black;
 }

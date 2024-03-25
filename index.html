@@ -12,14 +12,157 @@
     <!-- linking JS script -->
     <script src="./static/script.js"></script>
 
+    <!-- linking d3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
     <!-- linking fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
+
+        <div id="choropleth_title">WC Winners</div>
+
+        <div id="choropleth">
+            <svg width="100%" viewBox="0 0 2000 1000"></svg>
+            <script>
+                // here, I am trying to load the geoJSON file that is given to us
+                d3.json("https://enjalot.github.io/wwsd/data/world/world-110m.geojson").then(function (world) {
+                    d3.csv("./data/WorldCupMatches.csv").then(function (data) {
+
+                        // variable for win counts
+                        let winCount = {};
+
+                        // Parse the CSV data and iterate over each row
+                        data.forEach(row => {
+                            // Check if the match stage is "Final"
+                            if (row.Stage === "Final") {
+                                // Get the home and away team names
+                                const homeTeam = row["Home Team Name"];
+                                const awayTeam = row["Away Team Name"];
+
+                                // Initialize the win count for each team if not already present
+                                if (!winCount[homeTeam]) {
+                                    winCount[homeTeam] = 0;
+                                }
+                                if (!winCount[awayTeam]) {
+                                    winCount[awayTeam] = 0;
+                                }
+
+                                // Determine the winner based on home team goals and away team goals
+                                if (row["Home Team Goals"] > row["Away Team Goals"]) {
+                                    winCount[homeTeam]++; // Increment win count for the home team
+                                } else if (row["Home Team Goals"] < row["Away Team Goals"]) {
+                                    winCount[awayTeam]++; // Increment win count for the away team
+                                }
+                                // In case of a draw, no team gets a win count increment
+                            }
+                        });
+
+                        // editing winCount by hardcoding due to Dataset Inconsistency (small errors for only some countries)
+                        // making Brazil wins as 5
+                        winCount["Brazil"] = 5;
+                        // making Italy wins as 4
+                        winCount["Italy"] = 4;
+                        // making Germany wins as 4
+                        winCount["Germany"] = 4;
+                        // making Uruguay wins as 2
+                        winCount["Uruguay"] = 2;
+                        // making France wins as 2
+                        winCount["France"] = 2;
+
+                        // checking again
+                        console.log(winCount);
+
+                        // this is the projection and path generator
+                        const projection = d3.geoMercator()
+                            .fitSize([2000, 1000], world);
+                        const path = d3.geoPath().projection(projection);
+
+                        // drawing countries, direct template from online documentation
+                        const svg = d3.select("svg");
+                        const map = svg.append("g");
+
+                        map.selectAll("path")
+                            .data(world.features)
+                            .enter().append("path")
+                            .attr("d", path)
+                            .attr("fill", "white")
+                            .on("mouseover", function (event, d) {
+                                // Transitioning to light blue
+                                d3.select(this)
+                                    .transition()
+                                    .duration(200)
+                                    .attr("fill", "lightpink");
+
+                                // Get the name of the country
+                                const countryName = d.properties.name;
+
+                                // Get the number of trophies won by the country, defaulting to 0 if not found
+                                const trophiesWon = winCount[countryName] || 0;
+
+                                // Append a group element to hold the box and text
+                                const tooltipGroup = svg.append("g")
+                                    .attr("class", "tooltip-group");
+
+                                // Append a rectangle to act as the box
+                                const tooltipBox = tooltipGroup.append("rect")
+                                    .attr("class", "tooltip-box")
+                                    .attr("rx", 5)
+                                    .attr("ry", 5);
+
+                                // Append the text inside the box, including country name and trophies won
+                                const tooltipText = tooltipGroup.append("text")
+                                    .attr("class", "tooltip-text")
+                                    .text(`${countryName} --- Cups: ${trophiesWon}`)
+                                    .style("font-size", "30px");
+
+                                // Get the size of the text and box
+                                const textBBox = tooltipText.node().getBBox();
+                                const boxWidth = textBBox.width + 20;
+                                const boxHeight = textBBox.height + 10;
+
+                                // Calculate the position of the box relative to the mouse pointer
+                                const mouseX = event.pageX;
+                                const mouseY = event.pageY;
+                                const xOffset = mouseX + 15; // Offset for better positioning
+                                const yOffset = mouseY - boxHeight - 20; // Offset for better positioning
+
+                                // Set the attributes of the box and text based on the calculated position
+                                tooltipBox.attr("x", xOffset)
+                                    .attr("y", yOffset)
+                                    .attr("width", boxWidth)
+                                    .attr("height", boxHeight);
+                                tooltipText.attr("x", xOffset + 10)
+                                    .attr("y", yOffset + 40);
+
+                                // Add border effect to the box
+                                tooltipBox.style("stroke", "black")
+                                    .style("stroke-width", "1px")
+                                    .style("fill", "lightgray");
+                            })
+                            .on("mouseout", function () {
+                                // transitioning to white again
+                                d3.select(this) // Select the path
+                                    .transition() // Apply transition
+                                    .duration(200) // Set duration for the transition
+                                    .attr("fill", "white"); // Change fill color back to white
+
+                                // Remove the tooltip when mouse leaves the path
+                                svg.select(".tooltip-group").remove();
+                            });
+                    });
+                });
+            </script>
+
+
+        </div>
     </div>
 </body>
 
