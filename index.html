@@ -8,10 +8,6 @@
 
     <!-- linking stylesheet -->
     <link rel="stylesheet" href="./static/styles.css">
-
-    <!-- linking JS script -->
-    <script src="./static/script.js"></script>
-
     <!-- linking d3.js -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
@@ -27,7 +23,7 @@
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
-        <div id="choropleth_title">WC Winners</div>
+        <div class="graph_titles">WC Winners</div>
 
         <div id="choropleth">
             <svg width="100%" viewBox="0 0 2000 1000"></svg>
@@ -160,9 +156,13 @@
                     });
                 });
             </script>
-
-
         </div>
+        <div class="graph_titles">Top Goals Scorers</div>
+        <div id="bar_race_chart">
+            <!-- <svg id = "testing" width="100%" viewBox="0 0 2000 1000"></svg> -->
+            <script src="./static/script.js"></script>
+        </div>
+        
     </div>
 </body>
 

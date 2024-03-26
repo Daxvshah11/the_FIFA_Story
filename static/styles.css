@@ -39,7 +39,7 @@ body {
     justify-content: center;
 }
 
-#choropleth_title {
+.graph_titles {
     display: flex;
     font-size: 59px;
     text-align: center;

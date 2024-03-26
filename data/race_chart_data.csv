@@ -1,0 +1,428 @@
+date,country,goals
+1930.0,Argentina,18.0
+1930.0,Yugoslavia,7.0
+1930.0,Uruguay,15.0
+1930.0,USA,7.0
+1930.0,Peru,1.0
+1930.0,Paraguay,1.0
+1930.0,Romania,3.0
+1930.0,France,4.0
+1930.0,Chile,5.0
+1930.0,Brazil,5.0
+1930.0,Bolivia,0.0
+1930.0,Belgium,0.0
+1930.0,Mexico,4.0
+1934.0,Italy,12.0
+1934.0,USA,8.0
+1934.0,Switzerland,5.0
+1934.0,Sweden,4.0
+1934.0,Spain,4.0
+1934.0,Netherlands,2.0
+1934.0,Hungary,5.0
+1934.0,Romania,4.0
+1934.0,France,6.0
+1934.0,Egypt,2.0
+1934.0,Czechoslovakia,9.0
+1934.0,Brazil,6.0
+1934.0,Belgium,2.0
+1934.0,Austria,7.0
+1934.0,Argentina,20.0
+1934.0,Germany,11.0
+1938.0,Switzerland,10.0
+1938.0,Sweden,15.0
+1938.0,Romania,8.0
+1938.0,Poland,5.0
+1938.0,Norway,1.0
+1938.0,Netherlands,2.0
+1938.0,Italy,23.0
+1938.0,Germany,14.0
+1938.0,France,10.0
+1938.0,Dutch East Indies,0.0
+1938.0,Czechoslovakia,14.0
+1938.0,Cuba,5.0
+1938.0,Brazil,20.0
+1938.0,Belgium,3.0
+1938.0,Hungary,20.0
+1950.0,Sweden,26.0
+1950.0,Yugoslavia,14.0
+1950.0,Uruguay,30.0
+1950.0,USA,12.0
+1950.0,Switzerland,14.0
+1950.0,Spain,14.0
+1950.0,England,2.0
+1950.0,Mexico,6.0
+1950.0,Italy,27.0
+1950.0,Paraguay,3.0
+1950.0,Chile,10.0
+1950.0,Brazil,42.0
+1950.0,Bolivia,0.0
+1954.0,Yugoslavia,16.0
+1954.0,Uruguay,46.0
+1954.0,Turkey,10.0
+1954.0,Switzerland,25.0
+1954.0,Scotland,0.0
+1954.0,Mexico,8.0
+1954.0,Korea Republic,0.0
+1954.0,Italy,33.0
+1954.0,Germany FR,25.0
+1954.0,France,13.0
+1954.0,England,10.0
+1954.0,Czechoslovakia,14.0
+1954.0,Brazil,50.0
+1954.0,Belgium,8.0
+1954.0,Austria,24.0
+1954.0,Hungary,47.0
+1958.0,Northern Ireland,6.0
+1958.0,Yugoslavia,23.0
+1958.0,Wales,4.0
+1958.0,Sweden,38.0
+1958.0,Soviet Union,5.0
+1958.0,Scotland,4.0
+1958.0,Paraguay,12.0
+1958.0,Mexico,9.0
+1958.0,Argentina,25.0
+1958.0,Germany FR,37.0
+1958.0,France,36.0
+1958.0,England,14.0
+1958.0,Czechoslovakia,23.0
+1958.0,Brazil,66.0
+1958.0,Austria,26.0
+1958.0,Hungary,54.0
+1962.0,Italy,36.0
+1962.0,Yugoslavia,33.0
+1962.0,Uruguay,50.0
+1962.0,Spain,16.0
+1962.0,Soviet Union,14.0
+1962.0,Mexico,12.0
+1962.0,Hungary,62.0
+1962.0,Switzerland,27.0
+1962.0,England,19.0
+1962.0,Czechoslovakia,30.0
+1962.0,Colombia,5.0
+1962.0,Chile,20.0
+1962.0,Bulgaria,1.0
+1962.0,Germany FR,41.0
+1962.0,Brazil,80.0
+1962.0,Argentina,27.0
+1966.0,Switzerland,28.0
+1966.0,Spain,20.0
+1966.0,Soviet Union,24.0
+1966.0,Portugal,17.0
+1966.0,Mexico,13.0
+1966.0,Korea DPR,5.0
+1966.0,Italy,38.0
+1966.0,Uruguay,52.0
+1966.0,Germany FR,56.0
+1966.0,France,38.0
+1966.0,England,30.0
+1966.0,Chile,22.0
+1966.0,Bulgaria,2.0
+1966.0,Brazil,84.0
+1966.0,Argentina,31.0
+1966.0,Hungary,70.0
+1970.0,Uruguay,56.0
+1970.0,Sweden,40.0
+1970.0,Soviet Union,30.0
+1970.0,Romania,12.0
+1970.0,Peru,10.0
+1970.0,Morocco,2.0
+1970.0,Mexico,19.0
+1970.0,Italy,48.0
+1970.0,Israel,1.0
+1970.0,England,34.0
+1970.0,El Salvador,0.0
+1970.0,Czechoslovakia,32.0
+1970.0,Bulgaria,7.0
+1970.0,Brazil,103.0
+1970.0,Belgium,12.0
+1970.0,Germany FR,73.0
+1974.0,Netherlands,17.0
+1974.0,Yugoslavia,45.0
+1974.0,Zaire,0.0
+1974.0,Sweden,47.0
+1974.0,Scotland,7.0
+1974.0,Poland,21.0
+1974.0,Italy,53.0
+1974.0,Uruguay,57.0
+1974.0,Germany FR,86.0
+1974.0,German DR,5.0
+1974.0,Chile,23.0
+1974.0,Bulgaria,9.0
+1974.0,Brazil,109.0
+1974.0,Australia,0.0
+1974.0,Argentina,40.0
+1974.0,Haiti,2.0
+1978.0,Tunisia,3.0
+1978.0,Sweden,48.0
+1978.0,Spain,22.0
+1978.0,Scotland,12.0
+1978.0,Poland,27.0
+1978.0,Peru,17.0
+1978.0,Mexico,21.0
+1978.0,Italy,62.0
+1978.0,Netherlands,32.0
+1978.0,IR Iran,1.0
+1978.0,Hungary,73.0
+1978.0,Germany FR,96.0
+1978.0,France,43.0
+1978.0,Brazil,119.0
+1978.0,Austria,33.0
+1978.0,Argentina,55.0
+1978.0,Iran,1.0
+1982.0,Italy,74.0
+1982.0,Kuwait,2.0
+1982.0,New Zealand,2.0
+1982.0,Northern Ireland,11.0
+1982.0,Peru,19.0
+1982.0,Soviet Union,37.0
+1982.0,Poland,38.0
+1982.0,Scotland,20.0
+1982.0,Spain,26.0
+1982.0,Hungary,85.0
+1982.0,Yugoslavia,47.0
+1982.0,Honduras,2.0
+1982.0,Brazil,134.0
+1982.0,France,59.0
+1982.0,England,40.0
+1982.0,El Salvador,1.0
+1982.0,Czechoslovakia,34.0
+1982.0,Chile,26.0
+1982.0,Cameroon,1.0
+1982.0,Belgium,15.0
+1982.0,Austria,38.0
+1982.0,Argentina,63.0
+1982.0,Algeria,5.0
+1982.0,Germany FR,108.0
+1986.0,Mexico,27.0
+1986.0,Morocco,5.0
+1986.0,Northern Ireland,13.0
+1986.0,Paraguay,16.0
+1986.0,Korea Republic,4.0
+1986.0,Scotland,21.0
+1986.0,Soviet Union,49.0
+1986.0,Spain,37.0
+1986.0,Uruguay,59.0
+1986.0,Poland,39.0
+1986.0,Italy,79.0
+1986.0,Portugal,19.0
+1986.0,Hungary,87.0
+1986.0,Argentina,77.0
+1986.0,Belgium,27.0
+1986.0,Brazil,144.0
+1986.0,Iraq,1.0
+1986.0,Bulgaria,11.0
+1986.0,Algeria,6.0
+1986.0,Denmark,10.0
+1986.0,England,47.0
+1986.0,France,71.0
+1986.0,Germany FR,116.0
+1986.0,Canada,0.0
+1990.0,Romania,16.0
+1990.0,Scotland,23.0
+1990.0,Soviet Union,53.0
+1990.0,Spain,43.0
+1990.0,Sweden,51.0
+1990.0,Uruguay,61.0
+1990.0,Yugoslavia,55.0
+1990.0,"rn"">Republic of Ireland",2.0
+1990.0,"rn"">United Arab Emirates",2.0
+1990.0,Netherlands,35.0
+1990.0,USA,14.0
+1990.0,Korea Republic,5.0
+1990.0,Italy,89.0
+1990.0,Germany FR,131.0
+1990.0,Austria,40.0
+1990.0,Belgium,33.0
+1990.0,Brazil,148.0
+1990.0,Cameroon,8.0
+1990.0,Argentina,82.0
+1990.0,Costa Rica,4.0
+1990.0,Czechoslovakia,44.0
+1990.0,Egypt,3.0
+1990.0,England,55.0
+1990.0,Colombia,9.0
+1994.0,Netherlands,43.0
+1994.0,"rn"">Republic of Ireland",4.0
+1994.0,USA,17.0
+1994.0,Switzerland,33.0
+1994.0,Sweden,66.0
+1994.0,Spain,53.0
+1994.0,Saudi Arabia,5.0
+1994.0,Romania,26.0
+1994.0,Norway,2.0
+1994.0,Nigeria,7.0
+1994.0,Morocco,7.0
+1994.0,Russia,7.0
+1994.0,Korea Republic,9.0
+1994.0,Mexico,31.0
+1994.0,Argentina,90.0
+1994.0,Belgium,37.0
+1994.0,Bolivia,1.0
+1994.0,Bulgaria,21.0
+1994.0,Brazil,159.0
+1994.0,Colombia,13.0
+1994.0,Germany,23.0
+1994.0,Greece,0.0
+1994.0,Italy,97.0
+1994.0,Cameroon,11.0
+1998.0,Mexico,39.0
+1998.0,Norway,7.0
+1998.0,Morocco,12.0
+1998.0,Netherlands,56.0
+1998.0,Nigeria,13.0
+1998.0,Paraguay,19.0
+1998.0,Tunisia,4.0
+1998.0,Saudi Arabia,7.0
+1998.0,Scotland,25.0
+1998.0,South Africa,3.0
+1998.0,Spain,61.0
+1998.0,USA,18.0
+1998.0,Yugoslavia,60.0
+1998.0,Romania,30.0
+1998.0,Japan,1.0
+1998.0,Korea Republic,11.0
+1998.0,Italy,105.0
+1998.0,Jamaica,3.0
+1998.0,Argentina,100.0
+1998.0,Austria,43.0
+1998.0,Belgium,40.0
+1998.0,Brazil,173.0
+1998.0,Cameroon,13.0
+1998.0,Chile,31.0
+1998.0,Bulgaria,22.0
+1998.0,Croatia,11.0
+1998.0,Denmark,19.0
+1998.0,England,62.0
+1998.0,France,86.0
+1998.0,Germany,31.0
+1998.0,Iran,3.0
+1998.0,Colombia,14.0
+2002.0,Senegal,7.0
+2002.0,"rn"">Republic of Ireland",10.0
+2002.0,Portugal,25.0
+2002.0,Russia,11.0
+2002.0,Saudi Arabia,7.0
+2002.0,Slovenia,2.0
+2002.0,Paraguay,25.0
+2002.0,Spain,71.0
+2002.0,Sweden,71.0
+2002.0,Tunisia,5.0
+2002.0,Turkey,20.0
+2002.0,USA,25.0
+2002.0,Uruguay,65.0
+2002.0,South Africa,8.0
+2002.0,Nigeria,14.0
+2002.0,Poland,42.0
+2002.0,Korea Republic,19.0
+2002.0,Argentina,102.0
+2002.0,Belgium,46.0
+2002.0,Brazil,191.0
+2002.0,Cameroon,15.0
+2002.0,China PR,0.0
+2002.0,Costa Rica,9.0
+2002.0,Croatia,13.0
+2002.0,Mexico,43.0
+2002.0,Ecuador,2.0
+2002.0,England,68.0
+2002.0,France,86.0
+2002.0,Germany,45.0
+2002.0,Italy,110.0
+2002.0,Japan,6.0
+2002.0,Denmark,24.0
+2006.0,Netherlands,59.0
+2006.0,Paraguay,27.0
+2006.0,Poland,44.0
+2006.0,Portugal,32.0
+2006.0,Saudi Arabia,9.0
+2006.0,Spain,80.0
+2006.0,Sweden,74.0
+2006.0,Tunisia,8.0
+2006.0,Togo,1.0
+2006.0,USA,27.0
+2006.0,Ukraine,5.0
+2006.0,"rn"">Serbia and Montenegro",2.0
+2006.0,"rn"">Trinidad and Tobago",0.0
+2006.0,Mexico,48.0
+2006.0,Switzerland,37.0
+2006.0,Korea Republic,22.0
+2006.0,Japan,8.0
+2006.0,Italy,122.0
+2006.0,Argentina,113.0
+2006.0,Australia,5.0
+2006.0,Brazil,201.0
+2006.0,Costa Rica,12.0
+2006.0,Croatia,15.0
+2006.0,Czech Republic,3.0
+2006.0,C�te d'Ivoire,5.0
+2006.0,Angola,1.0
+2006.0,England,74.0
+2006.0,France,95.0
+2006.0,Germany,59.0
+2006.0,Ghana,4.0
+2006.0,IR Iran,1.0
+2006.0,Iran,5.0
+2006.0,Ecuador,7.0
+2010.0,Mexico,52.0
+2010.0,Netherlands,71.0
+2010.0,New Zealand,4.0
+2010.0,Nigeria,17.0
+2010.0,Paraguay,30.0
+2010.0,Portugal,39.0
+2010.0,Uruguay,76.0
+2010.0,Slovenia,5.0
+2010.0,Slovakia,5.0
+2010.0,South Africa,11.0
+2010.0,Spain,88.0
+2010.0,Switzerland,38.0
+2010.0,USA,32.0
+2010.0,Korea Republic,28.0
+2010.0,Serbia,2.0
+2010.0,Korea DPR,6.0
+2010.0,Denmark,27.0
+2010.0,Italy,126.0
+2010.0,Japan,12.0
+2010.0,Algeria,6.0
+2010.0,Argentina,123.0
+2010.0,Australia,8.0
+2010.0,Cameroon,17.0
+2010.0,Chile,34.0
+2010.0,Brazil,210.0
+2010.0,England,77.0
+2010.0,France,96.0
+2010.0,Germany,75.0
+2010.0,Ghana,9.0
+2010.0,Greece,2.0
+2010.0,Honduras,2.0
+2010.0,C�te d'Ivoire,9.0
+2014.0,Korea Republic,31.0
+2014.0,Honduras,3.0
+2014.0,IR Iran,2.0
+2014.0,Italy,128.0
+2014.0,Japan,14.0
+2014.0,Mexico,58.0
+2014.0,USA,38.0
+2014.0,Nigeria,20.0
+2014.0,Portugal,43.0
+2014.0,Russia,13.0
+2014.0,Spain,92.0
+2014.0,Switzerland,45.0
+2014.0,Greece,6.0
+2014.0,Netherlands,91.0
+2014.0,Ghana,13.0
+2014.0,Costa Rica,18.0
+2014.0,France,108.0
+2014.0,England,79.0
+2014.0,Ecuador,10.0
+2014.0,C�te d'Ivoire,13.0
+2014.0,Croatia,21.0
+2014.0,Colombia,29.0
+2014.0,Chile,41.0
+2014.0,Cameroon,18.0
+2014.0,Brazil,225.0
+2014.0,Belgium,54.0
+2014.0,Australia,11.0
+2014.0,Argentina,133.0
+2014.0,Algeria,14.0
+2014.0,Uruguay,80.0
+2014.0,Germany,104.0
+2014.0,"rn"">Bosnia and Herzegovina",4.0
