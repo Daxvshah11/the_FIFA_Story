@@ -17,7 +17,7 @@ body {
     padding: 20px;
     height: 100vh;
     width: 98%;
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
 }
@@ -29,7 +29,7 @@ body {
     margin-bottom: 20px;
     border-radius: 30px;
     text-align: center;
-    position: relative;
+    /* position: relative; */
     height: 200px;
     width: 100%;
     font-size: 90px;
@@ -43,7 +43,7 @@ body {
     display: flex;
     font-size: 59px;
     text-align: center;
-    position: relative;
+    /* position: relative; */
     align-items: center;
     justify-content: center;
     margin-top: 100px;
@@ -61,7 +61,7 @@ body {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
-    position: relative;
+    /* position: relative; */
     overflow: auto;
 
     /* aligning vertically and horizontally */
@@ -71,6 +71,15 @@ body {
     /* border work */
     border: 7px dashed rgb(172, 172, 255);
     border-radius: 20px;
+}
+
+#bar_race_chart {
+    /* for the bar race chart */
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
 }
 
 svg {

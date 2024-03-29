@@ -8,6 +8,10 @@
 
     <!-- linking stylesheet -->
     <link rel="stylesheet" href="./static/styles.css">
+
+    <!-- linking JS script -->
+    <script src="./static/script.js"></script>
+
     <!-- linking d3.js -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
@@ -23,9 +27,9 @@
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
-        <div class="graph_titles">WC Winners</div>
+        <div id="choropleth_title">Top Goal Scoring Nations</div>
 
-        <div id="choropleth">
+        <!-- <div id="choropleth">
             <svg width="100%" viewBox="0 0 2000 1000"></svg>
             <script>
                 // here, I am trying to load the geoJSON file that is given to us
@@ -156,18 +160,12 @@
                     });
                 });
             </script>
-        </div>
+        </div> -->
 
-        <div id="button_div"></div>
-        <button onclick="window.location.href = 'index2.html';"
-            style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Go
-            to TOP GOAL SCORERS (nations)</button>
-    </div>
-
-    <!-- <div id="bar_race_chart">
+        <div id="bar_race_chart">
             <iframe width="100%" height="732" frameborder="0"
                 src="https://observablehq.com/embed/c7e796558b4c7fe4@3103?cells=viewof+keyframe%2Cchart"></iframe>
-        </div> -->
+        </div>
     </div>
 </body>
 
