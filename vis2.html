@@ -45,17 +45,15 @@
             var screenWidth = window.innerWidth;
             var screenHeight = window.innerHeight;
 
+            // Set a maximum height for the graph
+            var maxGraphHeight = screenHeight - 150; // 150 pixels less to accommodate button and potential other elements
+
             // setting dimensions
             var graphWidth = 900; // The desired width for the word cloud display area
             var graphHeight = 900; // The desired height for the word cloud display area
 
             // Calculate margins to center the graph within the SVG
-            var margin = {
-                top: 50,
-                right: (screenWidth - graphWidth) / 2,
-                bottom: 50,
-                left: (screenWidth - graphWidth) / 2
-            };
+            var margin = { top: 10, right: (screenWidth - 900) / 2, bottom: 10, left: (screenWidth - 900) / 2 };
 
             // Ensure the margins are not negative
             margin.left = Math.max(margin.left, 10);
