@@ -9,11 +9,9 @@
     <!-- linking stylesheet -->
     <link rel="stylesheet" href="./static/styles.css">
 
-    <!-- linking JS script -->
-    <script src="./static/script.js"></script>
-
     <!-- linking d3.js -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 
     <!-- linking fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
@@ -23,21 +21,92 @@
 
 </head>
 
+
 <body>
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
-        <div class="graph_titles">Top Goal Scoring Nations</div>
+        <div class="graph_titles">Word Cloud - hosting Nations</div>
 
-        <div id="bar_race_chart">
-            <iframe width="100%" height="732" frameborder="0"
-                src="https://observablehq.com/embed/c7e796558b4c7fe4@3103?cells=viewof+keyframe%2Cchart"></iframe>
-        </div>
+        <script>
+            // List of words
+            var myWords = [{ word: "Japan", size: "30" }, { word: "England", size: "60" }, { word: "France", size: "150" }, {
+                word:
+                    "Germany", size: "90"
+            }, { word: "Italy", size: "60" }, { word: "Brazil", size: "180" }, { word: "Spain", size: "60" },
+            { word: "South Africa", size: "30" }, { word: "USA", size: "60" }, { word: "Russia", size: "30" }, {
+                word: "Qatar",
+                size: "30"
+            }, { word: "Uruguay", size: "30" }, { word: "Switzerland", size: "30" }, { word: "Sweden", size: "30" }, {
+                word: "Chile", size: "30"
+            }, { word: "Mexico", size: "60" }, { word: "Argentina", size: "60" }]
+
+            // getting the current screen dimensions
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+
+            // setting dimensions
+            var graphWidth = 900; // The desired width for the word cloud display area
+            var graphHeight = 900; // The desired height for the word cloud display area
+
+            // Calculate margins to center the graph within the SVG
+            var margin = {
+                top: 50,
+                right: (screenWidth - graphWidth) / 2,
+                bottom: 50,
+                left: (screenWidth - graphWidth) / 2
+            };
+
+            // Ensure the margins are not negative
+            margin.left = Math.max(margin.left, 10);
+            margin.right = Math.max(margin.right, 10);
+
+            // Set the dimensions of the SVG
+            var svgWidth = screenWidth;
+            var svgHeight = graphHeight + margin.top + margin.bottom;
+
+            // append the svg object to the body of the page
+            var svg = d3.select("#main_div").append("svg")
+                .attr("width", svgWidth)
+                .attr("height", svgHeight)
+                .style("display", "block") // Ensures the SVG is block level for proper centering
+                .style("margin", "auto") // Automatically center the SVG in the div
+                .append("g")
+                .attr("transform", "translate(" + (margin.left + graphWidth / 2) + "," + (margin.top + graphHeight / 2) + ")");
+
+            // Constructs a new cloud layout instance
+            var layout = d3.layout.cloud()
+                .size([graphWidth, graphHeight])
+                .words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
+                .padding(5) //space between words
+                .rotate(function () { return ~~(Math.random() * 2) * 90; })
+                .fontSize(function (d) { return d.size; }) // font size of words
+                .on("end", draw);
+            layout.start();
+
+            // This function takes the output of 'layout' above and draw the words
+            function draw(words) {
+                svg.selectAll("text")
+                    .data(words)
+                    .enter().append("text")
+                    .style("font-size", function (d) { return d.size; })
+                    .style("fill", "#131bf2")
+                    .attr("text-anchor", "middle")
+                    .style("font-family", "Impact")
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .text(function (d) { return d.text; });
+            }
+        </script>
+
 
         <button onclick="window.location.href = 'vis3.html';"
-            style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Go
-            to NEXT TITLE</button>
-    </div> 
+            style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+            Go to Top Goal Scorers (Nations)
+        </button>
+
+    </div>
 </body>
 
 </html>
