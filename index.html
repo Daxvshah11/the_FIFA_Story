@@ -114,29 +114,38 @@
                                     .attr("ry", 5);
 
                                 // Append the text inside the box, including country name and trophies won
-                                const tooltipText = tooltipGroup.append("text")
+                                const tooltipText1 = tooltipGroup.append("text")
                                     .attr("class", "tooltip-text")
-                                    .text(`${countryName} --- Cups: ${trophiesWon}`)
+                                    .text(`${countryName}`)
                                     .style("font-size", "30px");
 
+                                const tooltipText2 = tooltipGroup.append("text")
+                                    .attr("class", "tooltip-text")
+                                    .text(`Cups: ${trophiesWon}`)
+                                    .style("font-size", "20px")
+                                    .attr("dy", "1.2em");  // Move the second text line down by 1.2 times the line height
+
                                 // Get the size of the text and box
-                                const textBBox = tooltipText.node().getBBox();
-                                const boxWidth = textBBox.width + 20;
-                                const boxHeight = textBBox.height + 10;
+                                const textBBox1 = tooltipText1.node().getBBox();
+                                const textBBox2 = tooltipText2.node().getBBox();
+                                const boxWidth = Math.max(textBBox1.width, textBBox2.width) + 20;
+                                const boxHeight = textBBox1.height + textBBox2.height + 20;
 
                                 // Calculate the position of the box relative to the mouse pointer
                                 const mouseX = event.pageX;
                                 const mouseY = event.pageY;
-                                const xOffset = mouseX + 15; // Offset for better positioning
-                                const yOffset = mouseY - boxHeight - 20; // Offset for better positioning
+                                const xOffset = mouseX + 5; // Offset for better positioning
+                                const yOffset = mouseY - boxHeight - 20; // Position the tooltip above the cursor
 
                                 // Set the attributes of the box and text based on the calculated position
                                 tooltipBox.attr("x", xOffset)
                                     .attr("y", yOffset)
                                     .attr("width", boxWidth)
                                     .attr("height", boxHeight);
-                                tooltipText.attr("x", xOffset + 10)
-                                    .attr("y", yOffset + 40);
+                                tooltipText1.attr("x", xOffset + 10)
+                                    .attr("y", yOffset + 35);
+                                tooltipText2.attr("x", xOffset + 10)
+                                    .attr("y", yOffset + 40);  // Position the second text line below the first
 
                                 // Add border effect to the box
                                 tooltipBox.style("stroke", "black")
@@ -158,17 +167,11 @@
             </script>
         </div>
 
-        <div id="button_div"></div>
         <button onclick="window.location.href = 'vis2.html';"
             style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Go
             to TOP GOAL SCORERS (nations)</button>
     </div>
-
-    <!-- <div id="bar_race_chart">
-            <iframe width="100%" height="732" frameborder="0"
-                src="https://observablehq.com/embed/c7e796558b4c7fe4@3103?cells=viewof+keyframe%2Cchart"></iframe>
-        </div> -->
-    </div>
+    
 </body>
 
 </html>
