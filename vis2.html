@@ -28,12 +28,14 @@
 
         <div class="graph_titles">Word Cloud - hosting Nations</div>
 
+        <div id="word_cloud"></div>
+
         <script>
             // List of words
-            var myWords = [{ word: "Japan", size: "30" }, { word: "England", size: "60" }, { word: "France", size: "150" }, {
+            var myWords = [{ word: "Japan", size: "30" }, { word: "England", size: "60" }, { word: "France", size: "130" }, {
                 word:
                     "Germany", size: "90"
-            }, { word: "Italy", size: "60" }, { word: "Brazil", size: "180" }, { word: "Spain", size: "60" },
+            }, { word: "Italy", size: "60" }, { word: "Brazil", size: "160" }, { word: "Spain", size: "60" },
             { word: "South Africa", size: "30" }, { word: "USA", size: "60" }, { word: "Russia", size: "30" }, {
                 word: "Qatar",
                 size: "30"
@@ -45,31 +47,32 @@
             var screenWidth = window.innerWidth;
             var screenHeight = window.innerHeight;
 
-            // Set a maximum height for the graph
-            var maxGraphHeight = screenHeight - 150; // 150 pixels less to accommodate button and potential other elements
-
             // setting dimensions
-            var graphWidth = 900; // The desired width for the word cloud display area
-            var graphHeight = 900; // The desired height for the word cloud display area
+            var graphWidth = 0.7 * screenHeight; // The desired width for the word cloud display area
+            var graphHeight = 0.7 * screenWidth; // The desired height for the word cloud display area
 
             // Calculate margins to center the graph within the SVG
-            var margin = { top: 10, right: (screenWidth - 900) / 2, bottom: 10, left: (screenWidth - 900) / 2 };
+            var margin = { top: 10, right: (0.15 * screenWidth), bottom: 10, left: (0.15 * screenWidth) };
 
             // Ensure the margins are not negative
             margin.left = Math.max(margin.left, 10);
             margin.right = Math.max(margin.right, 10);
 
             // Set the dimensions of the SVG
-            var svgWidth = screenWidth;
-            var svgHeight = graphHeight + margin.top + margin.bottom;
+            var svgWidth = graphWidth;
+            var svgHeight = graphHeight;
 
             // append the svg object to the body of the page
-            var svg = d3.select("#main_div").append("svg")
+            var svg = d3.select("#main_div").select("#word_cloud").append("svg")
                 .attr("width", svgWidth)
                 .attr("height", svgHeight)
                 .style("display", "block") // Ensures the SVG is block level for proper centering
-                .style("margin", "auto") // Automatically center the SVG in the div
+                // .style("margin", "auto") // Automatically center the SVG in the div
                 .append("g")
+                // clipping should not happen and let it overflow
+                .attr("clip-path", "none")
+                // overflow should be auto
+                .style("overflow", "auto")
                 .attr("transform", "translate(" + (margin.left + graphWidth / 2) + "," + (margin.top + graphHeight / 2) + ")");
 
             // Constructs a new cloud layout instance
@@ -98,12 +101,12 @@
             }
         </script>
 
-
-        <button onclick="window.location.href = 'vis3.html';"
-            style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
-            Go to Top Goal Scorers (Nations)
-        </button>
-
+        <div>
+            <button onclick="window.location.href = 'vis3.html';"
+                style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+                Go to Top Goal Scorers (Nations)
+            </button>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,7 @@ body {
     /* removing default margin */
     margin: 0;
     padding: 0;
+    overflow: auto;
     font-family: 'Anton', sans-serif;
 }
 
@@ -17,6 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow: auto;
     height: 100vh;
     width: 98%;
     /* position: relative; */
