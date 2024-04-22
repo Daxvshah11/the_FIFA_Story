@@ -28,78 +28,10 @@
 
         <div class="graph_titles">Word Cloud - hosting Nations</div>
 
-        <div id="word_cloud"></div>
-
-        <script>
-            // List of words
-            var myWords = [{ word: "Japan", size: "30" }, { word: "England", size: "60" }, { word: "France", size: "130" }, {
-                word:
-                    "Germany", size: "90"
-            }, { word: "Italy", size: "60" }, { word: "Brazil", size: "160" }, { word: "Spain", size: "60" },
-            { word: "South Africa", size: "30" }, { word: "USA", size: "60" }, { word: "Russia", size: "30" }, {
-                word: "Qatar",
-                size: "30"
-            }, { word: "Uruguay", size: "30" }, { word: "Switzerland", size: "30" }, { word: "Sweden", size: "30" }, {
-                word: "Chile", size: "30"
-            }, { word: "Mexico", size: "60" }, { word: "Argentina", size: "60" }]
-
-            // getting the current screen dimensions
-            var screenWidth = window.innerWidth;
-            var screenHeight = window.innerHeight;
-
-            // setting dimensions
-            var graphWidth = 0.7 * screenHeight; // The desired width for the word cloud display area
-            var graphHeight = 0.7 * screenWidth; // The desired height for the word cloud display area
-
-            // Calculate margins to center the graph within the SVG
-            var margin = { top: 10, right: (0.15 * screenWidth), bottom: 10, left: (0.15 * screenWidth) };
-
-            // Ensure the margins are not negative
-            margin.left = Math.max(margin.left, 10);
-            margin.right = Math.max(margin.right, 10);
-
-            // Set the dimensions of the SVG
-            var svgWidth = graphWidth;
-            var svgHeight = graphHeight;
-
-            // append the svg object to the body of the page
-            var svg = d3.select("#main_div").select("#word_cloud").append("svg")
-                .attr("width", svgWidth)
-                .attr("height", svgHeight)
-                .style("display", "block") // Ensures the SVG is block level for proper centering
-                // .style("margin", "auto") // Automatically center the SVG in the div
-                .append("g")
-                // clipping should not happen and let it overflow
-                .attr("clip-path", "none")
-                // overflow should be auto
-                .style("overflow", "auto")
-                .attr("transform", "translate(" + (margin.left) + "," + (margin.top + graphHeight / 2) + ")");
-
-            // Constructs a new cloud layout instance
-            var layout = d3.layout.cloud()
-                .size([graphWidth, graphHeight])
-                .words(myWords.map(function (d) { return { text: d.word, size: d.size }; }))
-                .padding(5) //space between words
-                .rotate(function () { return ~~(Math.random() * 2) * 90; })
-                .fontSize(function (d) { return d.size; }) // font size of words
-                .on("end", draw);
-            layout.start();
-
-            // This function takes the output of 'layout' above and draw the words
-            function draw(words) {
-                svg.selectAll("text")
-                    .data(words)
-                    .enter().append("text")
-                    .style("font-size", function (d) { return d.size; })
-                    .style("fill", "#131bf2")
-                    .attr("text-anchor", "middle")
-                    .style("font-family", "Impact")
-                    .attr("transform", function (d) {
-                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                    })
-                    .text(function (d) { return d.text; });
-            }
-        </script>
+        <div id="word_cloud">
+            <!-- adding an image in the center such that it takes up almost all of the rest of the size of the screen and yet is responsive in size -->
+            <img src="./static/WCWinners_wordcloud.jpg" style="width: 100%; height: auto;">
+        </div>
 
         <div>
             <button onclick="window.location.href = 'vis3.html';"
