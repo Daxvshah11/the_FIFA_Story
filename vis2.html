@@ -73,7 +73,7 @@
                 .attr("clip-path", "none")
                 // overflow should be auto
                 .style("overflow", "auto")
-                .attr("transform", "translate(" + (margin.left + graphWidth / 2) + "," + (margin.top + graphHeight / 2) + ")");
+                .attr("transform", "translate(" + (margin.left) + "," + (margin.top + graphHeight / 2) + ")");
 
             // Constructs a new cloud layout instance
             var layout = d3.layout.cloud()
