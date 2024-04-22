@@ -4,18 +4,12 @@
     font-style: normal;
 }
 
-body {
-    /* removing default margin */
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    font-family: 'Anton', sans-serif;
-}
+
 
 #main_div {
     /* main background div */
     background-color: #e9f1ed;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     padding: 20px;
     overflow: auto;
@@ -45,19 +39,24 @@ body {
 
 .graph_titles {
     display: flex;
-    font-size: 59px;
+    
     text-align: center;
     /* position: relative; */
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 
     /* font family to cursive */
     font-family: "Permanent Marker", cursive;
     font-weight: 400;
+    font-size: 59px;
     font-style: normal;
 }
-
+body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 #choropleth {
     /* for the choropleth */
     display: flex;
@@ -72,9 +71,6 @@ body {
     align-items: center;
     justify-content: center;
 
-    /* border work */
-    border: 7px dashed rgb(172, 172, 255);
-    border-radius: 20px;
 }
 
 #bar_race_chart {
@@ -92,6 +88,37 @@ svg {
     width: 100%;
     height: auto;
     border-width: 10px;
+}
+.inference-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inference-title {
+    
+    
+    text-align: center;
+    /* position: relative; */
+   
+    justify-content: center;
+
+    /* font family to cursive */
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-size: 59px;
+    font-style: normal;
+}
+
+.inference-text {
+    font-size: 24px;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .tooltip {
