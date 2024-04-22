@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors https://*.observablehq.com">
+
+    <title>The FIFA Story</title>
+
+    <!-- linking stylesheet -->
+    <link rel="stylesheet" href="./static/styles.css">
+    <!-- linking d3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const generateButton = document.getElementById("generate_button");
+            const imageContainer = document.getElementById("image_container");
+            const title = document.getElementById("graph_titles");
+
+            generateButton.addEventListener("click", function () {
+                const selectedTeam = document.getElementById("team_dropdown").value;
+                const selectedMode = document.querySelector('input[name="display_mode"]:checked').value;
+                title.textContent = ` French players ${selectedMode} against ${selectedTeam}`;    
+                const imageName = `${selectedTeam}_${selectedMode}`;
+                const imagePath = `data/${imageName}.png`; 
+                const legendContainer = document.getElementById("legend_container");
+                if (selectedMode === "shotmap") {
+                const legendHTML = `
+                        <div class="legend-item">
+                            <span class="legend-color non-goal"></span> Non-Goal
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color goal"></span> Goal
+                        </div>
+                    `;
+                    legendContainer.innerHTML = legendHTML;
+                } else {
+                    // Clear legend if not in shotmap mode
+                    legendContainer.innerHTML = "";
+                }
+                // Create image element and set its attributes
+                const image = document.createElement("img");
+                image.setAttribute("src", imagePath);
+                image.setAttribute("alt", imageName);
+
+                // Clear previous image and append the new one
+                imageContainer.innerHTML = "";
+                imageContainer.appendChild(image);
+            });
+        });
+    </script>
+
+    <!-- linking fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+         #graph_titles {
+            font-size: 48px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        #main_div{
+            height:100vh;
+        }
+        #team_dropdown,
+        #radio_buttons {
+            margin-right: 10px;
+        }
+
+        #radio_buttons label {
+            margin-right: 5px;
+        }
+
+        #generate_button {
+            background-color: #4caf50;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        #generate_button:hover {
+            background-color: #45a049;
+        }
+
+        #image_container {
+            text-align: center;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .non-goal {
+            background-color: red;
+        }
+
+        .goal {
+            background-color: blue;
+        }
+        body{
+    width:100%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+    </style>
+
+</head>
+
+<body>
+    <div id="main_div">
+        <div id="top_bar">The FIFA Story</div>
+
+        <div id="graph_titles">French players activity & shot map</div>
+
+        <div id="controls">
+            <!-- Dropdown menu -->
+            <select id="team_dropdown">
+                <option value="Argentina">Argentina</option>
+                <option value="Denmark">Denmark</option>
+                <option value="England">England</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Poland">Poland</option>
+                <option value="Australia">Australia</option>
+                <option value="Tunisia">Tunisia</option>
+            </select>
+
+            <!-- Radio buttons -->
+            <div id="radio_buttons">
+                <label for="activity_radio">Players Activity</label>
+                <input type="radio" id="activity_radio" name="display_mode" value="activity" checked>
+
+                <label for="shotmap_radio">Shot Map</label>
+                <input type="radio" id="shotmap_radio" name="display_mode" value="shotmap">
+            </div>
+
+            <!-- Generate button -->
+            <button id="generate_button">GENERATE VIS</button>
+        </div>
+        <div id="legend_container"></div>
+        <!-- Image container -->
+        <!-- <div id="image_container"></div> -->
+        <div id="image_container" style="width: 100%; height: 40%;"></div>
+    </div>
+
+   
+</body>
+
+</html>

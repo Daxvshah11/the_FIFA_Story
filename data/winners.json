@@ -1,0 +1,24 @@
+{
+    "name": "World Cup Winners",
+    "children": [
+     {
+      "name": "South America",
+      "children": [
+       {"name": "Brazil","value":5},
+       {"name": "Argentina", "value": 3},
+       {"name": "Uruguay", "value": 2}
+      ]
+     },
+     {
+      "name": "Europe",
+      "children": [
+       {"name": "Spain", "value": 1},
+       {"name": "Italy", "value": 4},
+       {"name": "France", "value": 2},
+       {"name": "Germany", "value": 4},
+       {"name": "England", "value": 1}
+      ]
+     }
+    ]
+   }
+   
