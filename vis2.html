@@ -26,20 +26,42 @@
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
-        <div class="graph_titles">Word Cloud - hosting Nations</div>
+        <div class="graph_titles">Word Cloud - Most Winning Teams</div>
+
+        <div>
+            <!-- Button to regenerate the image -->
+            <button onclick="regenerateImage()"
+                style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+                REGENERATE
+            </button>
+        </div>
 
         <div id="word_cloud">
-            <!-- adding an image in the center such that it takes up almost all of the rest of the size of the screen and yet is responsive in size -->
-            <img src="./static/WCWinners_wordcloud.jpg" style="width: 100%; height: auto;">
+            <!-- Adding an image in the center, taking up most of the screen size and responsive -->
+            <img id="wordcloud_image" src="./static/wordclouds/WCWinners_wordcloud1.jpg"
+                style="width: 100%; height: auto;">
         </div>
 
         <div>
+            <!-- Button to go to another page -->
             <button onclick="window.location.href = 'vis3.html';"
                 style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
                 Go to Top Goal Scorers (Nations)
             </button>
         </div>
     </div>
+
+    <script>
+        function regenerateImage() {
+            // Generate a random number between 1 and 10
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+            // Construct the new image filename
+            const newImageName = `WCWinners_wordcloud${randomNumber}.jpg`;
+            // Update the src attribute of the image with the new filename
+            document.getElementById("wordcloud_image").src = `./static/wordclouds/${newImageName}`;
+        }
+    </script>
 </body>
+
 
 </html>

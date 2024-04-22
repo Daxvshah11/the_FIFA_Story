@@ -21,12 +21,12 @@
             generateButton.addEventListener("click", function () {
                 const selectedTeam = document.getElementById("team_dropdown").value;
                 const selectedMode = document.querySelector('input[name="display_mode"]:checked').value;
-                title.textContent = ` French players ${selectedMode} against ${selectedTeam}`;    
+                title.textContent = ` French players ${selectedMode} against ${selectedTeam}`;
                 const imageName = `${selectedTeam}_${selectedMode}`;
-                const imagePath = `data/${imageName}.png`; 
+                const imagePath = `data/${imageName}.png`;
                 const legendContainer = document.getElementById("legend_container");
                 if (selectedMode === "shotmap") {
-                const legendHTML = `
+                    const legendHTML = `
                         <div class="legend-item">
                             <span class="legend-color non-goal"></span> Non-Goal
                         </div>
@@ -57,7 +57,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
-         #graph_titles {
+        #graph_titles {
             font-size: 48px;
             margin-top: 20px;
             margin-bottom: 10px;
@@ -69,9 +69,11 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
-        #main_div{
-            height:100vh;
+
+        #main_div {
+            height: 100vh;
         }
+
         #team_dropdown,
         #radio_buttons {
             margin-left: 10px;
@@ -105,6 +107,7 @@
         #image_container {
             text-align: center;
         }
+
         .legend-color {
             display: inline-block;
             width: 20px;
@@ -120,11 +123,12 @@
         .goal {
             background-color: blue;
         }
-        body{
-    width:100%;
-    overflow-x:hidden;
-    overflow-y:hidden;
-}
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
     </style>
 
 </head>
@@ -157,7 +161,7 @@
             </div>
 
             <!-- Generate button -->
-            <button id="generate_button">GENERATE VIS</button>
+            <button id="generate_button">GENERATE VISUALS</button>
         </div>
         <div id="legend_container"></div>
         <!-- Image container -->
@@ -165,7 +169,10 @@
         <div id="image_container" style="width: 100%; height: 40%;"></div>
     </div>
 
-   
+    <div><button onclick="window.location.href = 'vis6.html';"
+            style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Go
+            to Top 5 World-Class Player comparision</button></div>
+
 </body>
 
 </html>
