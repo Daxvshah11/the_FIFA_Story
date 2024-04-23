@@ -16,7 +16,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const generateButton = document.getElementById("generate_button");
             const imageContainer = document.getElementById("image_container");
-            const title = document.getElementById("graph_titles");
+            const title = document.getElementsByClassName("graph_titles");
 
             generateButton.addEventListener("click", function () {
                 const selectedTeam = document.getElementById("team_dropdown").value;
@@ -137,7 +137,7 @@
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
-        <div id="graph_titles">French players activity & shot map</div>
+        <div class="graph_titles">French players activity & shot map</div>
 
         <div id="controls">
             <!-- Dropdown menu -->
@@ -170,7 +170,23 @@
     </div>
     <div class="inference-card">
         <h2 class="inference-title">Inference</h2>
-        <p class="inference-text">This is the inference text for the graph.</p>
+        <p class="inference-text">We opted FRENCH national team as after 2018 FIFA win, their team had created
+            great dominance and was beign considered as the "most balanced" team in all aspects. Thus, the choice of
+            visualisation and subject of analysis.</p>
+
+        <p class="inference-text">The heatmaps are one of the best information providers when talking about sports like
+            Football as players' movement becomes of the utmost importance for the strategy studies. The same goes for
+            field map shots visualisation as that also helps the team in understanding that where exactly are they
+            lacking or what is their strong point while shooting.</p>
+        <p class="inference-text">This graph clearly shows many inferences in various combinations for eg. we can see
+            that against Argentina, France was playing more "defensive" compared to more "offensive" against England and
+            so on.</p>
+        <p class="inference-text">Similarly, for shot maps, we can obeserve that France had significantly more shots
+            taken and goals scored against Australia whereas that was not the case against Tunisia and they did not
+            score in that match too. Not so surprisingly, the heat maps support this argument as it clearly shows that
+            against Australia, they played highly "offensive", while against Tunisia, they were highly "defensive" and
+            the movement seeed too restricted and backed off. Even their shots attempted were from far off the goal
+            meaning that Tunisia was able defend and attack better than France.</p>
     </div>
     <div><button onclick="window.location.href = 'vis6.html';"
             style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Go
