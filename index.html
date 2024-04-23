@@ -21,13 +21,14 @@
 
 </head>
 
-<body>
+<body style="overflow-y: auto;">
     <div id="main_div">
         <div id="top_bar">The FIFA Story</div>
 
         <div class="graph_titles">WC Winners</div>
 
-        <div id="choropleth">
+        <div id="choropleth" style="height: 60vh; overflow: auto;">
+            <!-- Adjusted height and added overflow for scrolling -->
             <svg width="100%" height="80%" viewBox="0 0 2000 1000"></svg>
             <script>
                 const colorScale = d3.scaleLinear()
@@ -185,7 +186,8 @@
                 });
             </script>
         </div>
-        <div class="inference-card">
+        <div class="inference-card" style="overflow-y: auto; max-height: 40vh;">
+            <!-- Added max-height and overflow for scrolling -->
             <h2 class="inference-title">Inference</h2>
             <p class="inference-text">Choropleth is the best way to start off with this story as we can show the base
                 line facts about FIFA and that how only very very few centric countries are winning the cups and where
