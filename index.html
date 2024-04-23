@@ -28,11 +28,11 @@
         <div class="graph_titles">WC Winners</div>
 
         <div id="choropleth">
-            <svg width="100%" viewBox="0 0 2000 1000"></svg>
+            <svg width="100%" height = "80%"viewBox="0 0 2000 1000"></svg>
             <script>
                 const colorScale = d3.scaleLinear()
                     .domain([0, 5]) 
-                    .range(["#f0f0f0", "#4CAF50"]); 
+                    .range(["#ADD8E6", "	#191970"]); 
                 // here, I am trying to load the geoJSON file that is given to us
                 d3.json("https://enjalot.github.io/wwsd/data/world/world-110m.geojson").then(function (world) {
                     d3.csv("./data/WorldCupMatches.csv").then(function (data) {
@@ -106,7 +106,7 @@
                                 // Transitioning to light blue
                                 d3.select(this)
                                     .transition()
-                                    .duration(200)
+                                    .duration(500)
                                     .attr("fill", "lightpink");
 
                                 // Get the name of the country
@@ -169,7 +169,14 @@
                                 d3.select(this) // Select the path
                                     .transition() // Apply transition
                                     .duration(200) // Set duration for the transition
-                                    .attr("fill", "white"); // Change fill color back to white
+                                    .attr("fill", d => {
+                                // Get the name of the country
+                                const countryName = d.properties.name;
+                                // Get the number of trophies won by the country, defaulting to 0 if not found
+                                const trophiesWon = winCount[countryName] || 0;
+                                // Map the number of trophies to the color scale
+                                return colorScale(trophiesWon);
+                            })
 
                                 // Remove the tooltip when mouse leaves the path
                                 svg.select(".tooltip-group").remove();
