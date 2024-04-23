@@ -28,11 +28,11 @@
         <div class="graph_titles">WC Winners</div>
 
         <div id="choropleth">
-            <svg width="100%" height = "80%"viewBox="0 0 2000 1000"></svg>
+            <svg width="100%" height="80%" viewBox="0 0 2000 1000"></svg>
             <script>
                 const colorScale = d3.scaleLinear()
-                    .domain([0, 5]) 
-                    .range(["#ADD8E6", "	#191970"]); 
+                    .domain([0, 5])
+                    .range(["#ADD8E6", "	#191970"]);
                 // here, I am trying to load the geoJSON file that is given to us
                 d3.json("https://enjalot.github.io/wwsd/data/world/world-110m.geojson").then(function (world) {
                     d3.csv("./data/WorldCupMatches.csv").then(function (data) {
@@ -170,13 +170,13 @@
                                     .transition() // Apply transition
                                     .duration(200) // Set duration for the transition
                                     .attr("fill", d => {
-                                // Get the name of the country
-                                const countryName = d.properties.name;
-                                // Get the number of trophies won by the country, defaulting to 0 if not found
-                                const trophiesWon = winCount[countryName] || 0;
-                                // Map the number of trophies to the color scale
-                                return colorScale(trophiesWon);
-                            })
+                                        // Get the name of the country
+                                        const countryName = d.properties.name;
+                                        // Get the number of trophies won by the country, defaulting to 0 if not found
+                                        const trophiesWon = winCount[countryName] || 0;
+                                        // Map the number of trophies to the color scale
+                                        return colorScale(trophiesWon);
+                                    })
 
                                 // Remove the tooltip when mouse leaves the path
                                 svg.select(".tooltip-group").remove();
@@ -187,13 +187,22 @@
         </div>
         <div class="inference-card">
             <h2 class="inference-title">Inference</h2>
-            <p class="inference-text">This is the inference text for the graph.</p>
+            <p class="inference-text">Choropleth is the best way to start off with this story as we can show the base
+                line facts about FIFA and that how only very very few centric countries are winning the cups and where
+                there are placed geographically.</p>
+            <p class="inference-text">This inference could also lead us to thinking about the fact that the best culture
+                for Football as not just a sport but also a passion and profession is also found in these same regions
+                colored darker on the choropleth.</p>
+            <p class="inference-text">Further, the interactability of the same also help us actually see the number of
+                FIFA Cups won by each of the coutries when we hover over them. Although, most countries have 0 cups but
+                then, this visualisation could easily handle the same data with addition of number of times the country
+                getting qualified for FIFA also making it a little more vivid and more informative than this one.</p>
         </div>
         <button onclick="window.location.href = 'vis2.html';"
             style="font-size: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom:30px">Go
             to Word Cloud - Most Winning Teams</button>
     </div>
-    
+
 </body>
 
 </html>
